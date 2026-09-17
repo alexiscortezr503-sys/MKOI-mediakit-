@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monster Koi — Media Kit 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:    #080C0A;
+    --dark:     #0E1410;
+    --surface:  #141A16;
+    --line:     #1E2820;
+    --green:    #00E664;
+    --green-dim:#00C853;
+    --muted:    #4A5E50;
+    --text:     #C8D8CC;
+    --white:    #EEF5F0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+
+  section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+  section:last-child { border-bottom: none; }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 30%, rgba(0,230,100,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,200,83,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .cover-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--green);
+    margin-bottom: 32px;
+  }
+
+  .cover-name {
+    font-size: clamp(52px, 10vw, 96px);
+    font-weight: 700;
+    line-height: 0.92;
+    color: var(--white);
+    letter-spacing: -0.03em;
+  }
+
+  .cover-name span {
+    color: var(--green);
+  }
+
+  .cover-sub {
+    margin-top: 24px;
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 480px;
+  }
+
+  .cover-meta {
+    margin-top: 48px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .cover-meta-item { }
+  .cover-meta-item .val {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 26px;
+    color: var(--white);
+    font-weight: 700;
+  }
+  .cover-meta-item .lbl {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  .divider-line {
+    width: 40px;
+    height: 2px;
+    background: var(--green);
+    margin: 40px 0;
+  }
+
+  /* ── HEADINGS ── */
+  h2 {
+    font-size: 13px;
+    font-family: 'Space Mono', monospace;
+    color: var(--green);
+    letter-spacing: 0.14em;
+    margin-bottom: 28px;
+  }
+
+  h3 {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: var(--text);
+    font-weight: 300;
+    max-width: 620px;
+  }
+
+  /* ── WHO WE ARE ── */
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 40px;
+  }
+
+  .who-item {
+    background: var(--surface);
+    padding: 28px 32px;
+  }
+
+  .who-item:first-child { grid-column: 1 / -1; }
+
+  .who-item .label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    margin-bottom: 10px;
+  }
+
+  .who-item .value {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  .who-item .value.big {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--green);
+  }
+
+  /* ── AUDIENCE ── */
+  .aud-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 40px;
+  }
+
+  .aud-box {
+    background: var(--surface);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .aud-box .pct {
+    font-family: 'Space Mono', monospace;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1;
+  }
+
+  .aud-box .desc {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 300;
+  }
+
+  /* ── PLATFORMS ── */
+  .platform-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .platform-row {
+    background: var(--surface);
+    padding: 22px 32px;
+    display: grid;
+    grid-template-columns: 160px 1fr auto;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .platform-row .name {
+    font-weight: 600;
+    color: var(--white);
+    font-size: 15px;
+  }
+
+  .platform-row .handle {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .platform-row .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--green);
+    background: rgba(0,230,100,0.08);
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+
+  /* ── TOURNAMENT ── */
+  .tourney-block {
+    margin-top: 40px;
+    background: var(--surface);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tourney-block::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--green);
+  }
+
+  .tourney-block .event {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .tourney-block .status {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--green);
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+  }
+
+  .tourney-block p {
+    font-size: 14px;
+    color: var(--text);
+    max-width: 500px;
+  }
+
+  /* ── PACKAGES ── */
+  .pkg-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 40px;
+  }
+
+  .pkg {
+    background: var(--surface);
+    padding: 36px 32px;
+    position: relative;
+  }
+
+  .pkg.featured {
+    background: var(--dark);
+    outline: 1px solid var(--green);
+  }
+
+  .pkg .tier {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--green);
+    letter-spacing: 0.14em;
+    margin-bottom: 12px;
+  }
+
+  .pkg .price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .pkg .price span {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .pkg ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pkg ul li {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 300;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .pkg ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--green-dim);
+    font-size: 12px;
+  }
+
+  /* ── SPONSOR ── */
+  .sponsor-block {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .sponsor-item {
+    background: var(--surface);
+    padding: 32px;
+  }
+
+  .sponsor-item .name {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .sponsor-item .role {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .sponsor-item p {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text);
+  }
+
+  /* ── CONTACT ── */
+  .contact-block {
+    margin-top: 40px;
+    background: var(--surface);
+    padding: 48px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .contact-block h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .contact-block p {
+    font-size: 14px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--green);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact-link:hover { color: var(--white); }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer .brand {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .footer .brand strong { color: var(--green); }
+
+  .footer .note {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .who-grid,
+    .aud-row,
+    .pkg-grid,
+    .sponsor-block { grid-template-columns: 1fr; }
+
+    .who-item:first-child { grid-column: 1; }
+
+    .platform-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .contact-block {
+      grid-template-columns: 1fr;
+    }
+
+    .cover-meta { gap: 24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-bg"></div>
+    <div class="cover-label">MEDIA KIT · 2026</div>
+    <div class="cover-name">MONSTER<br><span>KOI</span></div>
+    <p class="cover-sub">Organización de esports de Blood Strike con base en El Salvador, compitiendo en LATAM.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="val">1,142+</span>
+        <span class="lbl">Seguidores totales</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="val">Top 9</span>
+        <span class="lbl">de 24 equipos LATAM</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="val">8</span>
+        <span class="lbl">Jugadores activos</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="val">Playoffs</span>
+        <span class="lbl">BS Latin American Cup</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIÉNES SOMOS -->
+  <section>
+    <h2>QUIÉNES SOMOS</h2>
+    <h3>El proyecto de esports más organizado de Centroamérica</h3>
+    <p>Monster Koi es una organización de Blood Strike fundada en El Salvador con visión de largo plazo. No somos un clan casual — somos un proyecto estructurado que compite, crece y construye comunidad con disciplina y sistema colectivo.</p>
+
+    <div class="who-grid">
+      <div class="who-item">
+        <div class="label">MISIÓN</div>
+        <div class="value">Ser el esport de Blood Strike más organizado y preparado de LATAM — no por talento individual, sino por sistema colectivo.</div>
+      </div>
+      <div class="who-item">
+        <div class="label">FUNDADOR / CEO</div>
+        <div class="value">ALEX — IGL con 7+ años de experiencia competitiva en Free Fire, Apex Legends, PUBG Mobile y Blood Strike</div>
+      </div>
+      <div class="who-item">
+        <div class="label">REGIÓN</div>
+        <div class="value">El Salvador · Centroamérica · LATAM</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESENCIA DIGITAL -->
+  <section>
+    <h2>PRESENCIA DIGITAL</h2>
+    <h3>Dónde estamos</h3>
+    <p>Presencia activa en las plataformas donde vive la comunidad gamer de LATAM, con transmisiones en vivo, contenido y comunidad en crecimiento.</p>
+
+    <div class="platform-list">
+      <div class="platform-row">
+        <div class="name">TikTok</div>
+        <div class="handle">@monsterkoi.oficial</div>
+        <div class="tag">363 SEGUIDORES · LIVES</div>
+      </div>
+      <div class="platform-row">
+        <div class="name">Instagram</div>
+        <div class="handle">@monsterkoioficial</div>
+        <div class="tag">779 SEGUIDORES</div>
+      </div>
+      <div class="platform-row">
+        <div class="name">Discord</div>
+        <div class="handle">discord.gg/mdebB246</div>
+        <div class="tag">81 MIEMBROS</div>
+      </div>
+      <div class="platform-row">
+        <div class="name">WhatsApp</div>
+        <div class="handle">Grupo oficial</div>
+        <div class="tag">61 MIEMBROS</div>
+      </div>
+      <div class="platform-row">
+        <div class="name">Sitio Web</div>
+        <div class="handle">alexiscortezr503-sys.github.io/MOSTERKOI</div>
+        <div class="tag">WEB PROPIA</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCIA -->
+  <section>
+    <h2>AUDIENCIA</h2>
+    <h3>A quién llegamos</h3>
+    <p>Nuestra comunidad es 100% gamer, joven y activa. Jugadores competitivos y espectadores de esports móviles en El Salvador y LATAM.</p>
+
+    <div class="aud-row">
+      <div class="aud-box">
+        <div class="pct">16–28</div>
+        <div class="desc">Rango de edad principal</div>
+      </div>
+      <div class="aud-box">
+        <div class="pct">LATAM</div>
+        <div class="desc">Alcance regional: El Salvador, Guatemala, Honduras, México y más</div>
+      </div>
+      <div class="aud-box">
+        <div class="pct">100%</div>
+        <div class="desc">Audiencia gamer — jugadores activos de mobile FPS</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TORNEO ACTIVO -->
+  <section>
+    <h2>COMPETICIÓN</h2>
+    <h3>Activos en torneo ahora mismo</h3>
+    <p>Este es el momento ideal para estar asociado a Monster Koi — generamos interacción real mientras competimos.</p>
+
+    <div class="tourney-block">
+      <div class="event">BS Latin American Cup 2026</div>
+      <div class="status">PLAYOFFS EN CURSO · 19–20 SEP 2026 · SKYLINE BEACH</div>
+      <p>Monster Koi clasificó a los playoffs de la Copa Latinoamericana de Blood Strike, posicionándose <strong style="color:var(--green)">#9 de 24 equipos</strong> en el Group Draw de playoffs — compitiendo contra los mejores clanes de Colombia, Argentina, Brasil, México, Venezuela y LATAM. En clasificatorias (Grupo A, Día 1) terminamos en posición #11 de 25 equipos con 57 puntos. Nuestros sponsors tienen visibilidad directa durante cada partida, transmisión en vivo y toda la cobertura del torneo oficial.</p>
+    </div>
+
+    <div style="margin-top:2px; background:var(--surface); padding:28px 40px; display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.12em;margin-bottom:8px;">CLASIFICATORIAS</div>
+        <div style="font-size:28px;font-weight:700;color:var(--green);font-family:'Space Mono',monospace;">#11</div>
+        <div style="font-size:13px;color:var(--text);font-weight:300;">de 25 equipos · Grupo A</div>
+      </div>
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.12em;margin-bottom:8px;">PLAYOFFS</div>
+        <div style="font-size:28px;font-weight:700;color:var(--green);font-family:'Space Mono',monospace;">#9</div>
+        <div style="font-size:13px;color:var(--text);font-weight:300;">de 24 equipos · LATAM</div>
+      </div>
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.12em;margin-bottom:8px;">EQUIPO</div>
+        <div style="font-size:28px;font-weight:700;color:var(--green);font-family:'Space Mono',monospace;">8</div>
+        <div style="font-size:13px;color:var(--text);font-weight:300;">jugadores activos (mobile + PC)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROSTER -->
+  <section>
+    <h2>ROSTER ACTIVO</h2>
+    <h3>El equipo detrás de Monster Koi</h3>
+    <p>8 jugadores activos divididos entre plataformas mobile y PC, con entrenamientos regulares durante la semana.</p>
+
+    <div style="margin-top:40px; display:flex; flex-direction:column; gap:2px;">
+      <div style="background:var(--surface); padding:22px 32px; display:grid; grid-template-columns:140px 120px 1fr; align-items:center; gap:24px;">
+        <div style="font-weight:600;color:var(--white);font-size:15px;">ALEX</div>
+        <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--green);">CEO · IGL</div>
+        <div style="font-size:13px;color:var(--muted);">In-Game Leader — Mobile · 7+ años de experiencia competitiva en LATAM</div>
+      </div>
+      <div style="background:var(--surface); padding:22px 32px; display:grid; grid-template-columns:140px 120px 1fr; align-items:center; gap:24px;">
+        <div style="font-weight:600;color:var(--white);font-size:15px;">MANPO</div>
+        <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--green);">SUPPORT · PC</div>
+        <div style="font-size:13px;color:var(--muted);">Soporte táctico — plataforma PC</div>
+      </div>
+      <div style="background:var(--surface); padding:22px 32px; display:grid; grid-template-columns:140px 120px 1fr; align-items:center; gap:24px;">
+        <div style="font-weight:600;color:var(--white);font-size:15px;">GABRIEL</div>
+        <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--green);">ENTRY FRAGGER · PC</div>
+        <div style="font-size:13px;color:var(--muted);">Entry fragger — plataforma PC</div>
+      </div>
+      <div style="background:var(--surface); padding:22px 32px; display:grid; grid-template-columns:140px 120px 1fr; align-items:center; gap:24px;">
+        <div style="font-weight:600;color:var(--white);font-size:15px;">LAYO</div>
+        <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--green);">FRAGGER · MOBILE</div>
+        <div style="font-size:13px;color:var(--muted);">Fragger — plataforma mobile</div>
+      </div>
+      <div style="background:var(--surface); padding:22px 32px; display:grid; grid-template-columns:140px 120px 1fr; align-items:center; gap:24px;">
+        <div style="font-weight:600;color:var(--white);font-size:15px;">LEY WIN</div>
+        <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--green);">MOBILE</div>
+        <div style="font-size:13px;color:var(--muted);">Jugador activo — plataforma mobile</div>
+      </div>
+      <div style="background:var(--surface); padding:22px 32px; display:grid; grid-template-columns:140px 120px 1fr; align-items:center; gap:24px;">
+        <div style="font-weight:600;color:var(--white);font-size:15px;">SEBAS</div>
+        <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--green);">MOBILE</div>
+        <div style="font-size:13px;color:var(--muted);">Jugador activo — plataforma mobile</div>
+      </div>
+      <div style="background:var(--surface); padding:22px 32px; display:grid; grid-template-columns:140px 120px 1fr; align-items:center; gap:24px;">
+        <div style="font-weight:600;color:var(--white);font-size:15px;">MAIKOL</div>
+        <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--green);">MOBILE</div>
+        <div style="font-size:13px;color:var(--muted);">Jugador activo — plataforma mobile</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPONSORS -->
+  <section>
+    <h2>SPONSORS ACTUALES</h2>
+    <h3>Marcas que ya confían en nosotros</h3>
+
+    <div class="sponsor-block">
+      <div class="sponsor-item">
+        <div class="name">Dubby</div>
+        <div class="role">Sponsor oficial · Bebida energética gamer</div>
+        <p>Primer patrocinador oficial de Monster Koi desde septiembre 2026. La comunidad usa el código <strong style="color:var(--green)">MKOI</strong> para un 10% de descuento en dubby.gg.</p>
+      </div>
+      <div class="sponsor-item" style="border: 1px dashed var(--line); display:flex; align-items:center; justify-content:center; text-align:center; flex-direction:column; gap:8px;">
+        <div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--muted);">ESPACIO DISPONIBLE</div>
+        <div style="font-size:14px; color:var(--text); font-weight:300;">Tu marca aquí junto a Dubby</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAQUETES -->
+  <section>
+    <h2>PAQUETES DE PATROCINIO</h2>
+    <h3>Elige cómo quieres crecer con nosotros</h3>
+
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="tier">BRONZE</div>
+        <div class="price">Básico <span>/ por acordar</span></div>
+        <ul>
+          <li>Logo en el sitio web oficial</li>
+          <li>Mención en redes sociales</li>
+          <li>Reconocimiento como sponsor</li>
+        </ul>
+      </div>
+      <div class="pkg">
+        <div class="tier">SILVER</div>
+        <div class="price">Medio <span>/ por acordar</span></div>
+        <ul>
+          <li>Todo lo de Bronze</li>
+          <li>Contenido en TikTok e Instagram</li>
+          <li>Código de descuento propio</li>
+          <li>Mención en transmisiones en vivo</li>
+        </ul>
+      </div>
+      <div class="pkg featured">
+        <div class="tier">GOLD</div>
+        <div class="price">Premium <span>/ por acordar</span></div>
+        <ul>
+          <li>Todo lo de Silver</li>
+          <li>Logo en jersey del equipo</li>
+          <li>Menciones en todos los torneos</li>
+          <li>Presencia en clips y highlights</li>
+        </ul>
+      </div>
+      <div class="pkg">
+        <div class="tier">PRINCIPAL</div>
+        <div class="price">Naming <span>/ por acordar</span></div>
+        <ul>
+          <li>Todo lo de Gold</li>
+          <li>Naming rights del equipo</li>
+          <li>Presencia en todo el contenido</li>
+          <li>Exclusividad en su categoría</li>
+          <li>Integración total de marca</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section>
+    <h2>CONTACTO</h2>
+    <div class="contact-block">
+      <div>
+        <h3>Hablemos</h3>
+        <p>Si tu marca quiere crecer con la comunidad gamer de LATAM, este es el momento. Estamos en torneo activo y creciendo.</p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:alexiscortezr503@gmail.com">↗ alexiscortezr503@gmail.com</a>
+        <a class="contact-link" href="https://wa.me/50373298700" target="_blank">↗ WhatsApp +503 7329 8700</a>
+        <a class="contact-link" href="https://www.instagram.com/monsterkoioficial/" target="_blank">↗ Instagram @monsterkoioficial</a>
+        <a class="contact-link" href="https://www.tiktok.com/@monsterkoi.oficial" target="_blank">↗ TikTok @monsterkoi.oficial</a>
+        <a class="contact-link" href="https://alexiscortezr503-sys.github.io/MOSTERKOI/" target="_blank">↗ Sitio Web</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand"><strong>MONSTER KOI</strong> · El Salvador · LATAM · 2026</div>
+    <div class="note">"Todos los clanes los vemos como jugadores casuales"</div>
+  </div>
+
+</div>
+
+</body>
+</html>
